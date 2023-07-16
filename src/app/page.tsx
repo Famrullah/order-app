@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 // import component
 import Header from "@/components/molekul/header"
-import DeliveryContainers from '@/container/deliveryContainer'
+import DashboardContainer from '@/container/dashboardContainer'
 
 export default function Home() {
   const router:any = useRouter()
@@ -14,9 +14,9 @@ export default function Home() {
   const data =[{ name: 'Cost of goods', price: 2000 }]
   return (
     <>
-      <main className="mx-5 bg-white px-4 my-24">
+      <main className="bg-white px-4 my-24 mx-auto max-w-[80%]">
         <Header/>
-        <DeliveryContainers/>
+        <DashboardContainer/>
       </main>
     </>
   )
