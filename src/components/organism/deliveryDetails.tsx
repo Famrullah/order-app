@@ -28,7 +28,7 @@ export default function DeliveryDetails({total,transaction}: IPropsSummary) {
   return (
     <div className="md:flex flex-wrap mt-5 pb-5">
       <div className="md:w-3/4 xs:w-full">
-        <div className="lg:border-r border-1 lg:border-[#FF8A00] mr-4">
+        <div className="lg:border-r border-1 lg:border-[#FF8A00] mr-4 min-h-[400px]">
           <h3 className="text-[#FF8A00] text-4xl font-semibold">Delivery Details</h3> 
           <div className="py-5">
             <div>
@@ -53,12 +53,16 @@ export default function DeliveryDetails({total,transaction}: IPropsSummary) {
         </div>
         <div className="lg:absolute bottom-0 left-0 right-0 md:relative">
           {transaction.map((item,idx)=>(
-            <div className="flex justify-between" key={idx}>
+            <div className="flex justify-between font-light" key={idx}>
               <p className="text-sm leading-5">{item.name}</p>
               <p className="text-sm font-semibold leading-5" >{item.price}</p>
             </div>
           ))}
-          <button className="btn-primary"> Continue to Payment </button>
+          <div className="flex justify-between font-bold text-xl text-[#FF8A00] mt-2">
+            <p className="">Total</p>
+            <p>{total}</p>
+          </div>
+          <button className="btn-primary mt-2"> Continue to Payment </button>
         </div>
       </div>
     </div>
